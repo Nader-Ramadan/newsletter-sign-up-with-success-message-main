@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root {
+    --Tomato: hsl(4, 100%, 67%);
+    --Dark-Slate-Grey: hsl(234, 29%, 20%);
+    --Charcoal-Grey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --White: hsl(0, 0%, 100%);
+    --liner: -30deg, #FF6A3A, #FF527B;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+}
+body {
+    display: flex;
+    align-items: center;
+    min-height: 100svh;
+}
+main {
+    background: var(--White);
+    margin: auto;
+}
+.banner img {
+    width: 100%;
+}
+.content {
+    display: flex;
+    flex-flow: column;
+    padding: 2rem 1.5rem;
+    gap: 1.4rem;
+    color: var(--Dark-Slate-Grey);
+}
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.content p {
+    font-weight: 400;
+    line-height: 1.4rem;
+}
+.check-list {
+    display: flex;
+    flex-flow: column;
+    margin-top: 0.2rem;
+    gap: 0.8rem;
+}
+.check {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+form {
+    display: flex;
+    flex-flow: column;
+    padding: 1rem 0;
+    gap: 0.5rem;
+}
+.email {
+    display: flex;
+    justify-content: space-between;
+}
+.email p {
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+.error-msg {
+    color: var(--Tomato);
+    font-style: italic;
+    display: none;
+}
+input {
+    background: transparent;
+    border-radius: 0.4rem;
+    border: none;
+    box-shadow: 0 0 0 0.05rem var(--Grey);
+    padding: 1.1rem 1.5rem;
+    outline-color: var(--Dark-Slate-Grey);
+    color: var(--Dark-Slate-Grey);
+}
+input::placeholder {
+    color: var(--Grey);
+}
+.error {
+    color: var(--Tomato);
+    background: rgba(255, 0, 0, 0.25);
+    outline-color: var(--Tomato);
+    box-shadow: 0 0 0 0.05rem var(--Tomato);
+}
+button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    margin-top: 1rem;
+    color: var(--White);
+    padding: 1.15rem;
+    font-weight: 700;
+    background: var(--Dark-Slate-Grey);
+    border-radius: 0.4rem;
+}
+button:hover {
+    transition: 0.2s ease-out;
+    background: linear-gradient(var(--liner));
+    box-shadow: 0 0.5rem 1rem var(--Dark-Slate-Grey);
+}
+.banner-desktop {
+    display: none;
+}
+.thanks {
+    flex-flow: column;
+    padding: 9.35rem 1.5rem;
+    gap: 2.2rem;
+    color: var(--Dark-Slate-Grey);
+    display: none;
+}
+.thanks h1 {
+    line-height: 3.6rem;
+}
+.thanks p {
+    margin-top: -0.8rem;
+    line-height: 1.5rem;
+}
+.thanks p span {
+    font-weight: 700;
+}
+.thanks button {
+    margin-top: 14.2rem;
+}
+.hide {
+    animation: hide 0.5s forwards ease-in;
+}
+@keyframes hide {
+    100% {
+        scale: 0;
+        display: none;
+    }
+}
+.show {
+    display: flex;
+    animation: show 0.5s 0.5s forwards ease-out;
+    scale: 0;
+    position: absolute;
+}
+@keyframes show {
+    0% {
+        position: relative;
+    }
+    100% {
+        scale: 1;
+        position: relative;
+    }
+}
+.attribution { 
+    display: none;
+    text-align: center;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%);
+}
+@media screen and (min-width: 425px) {
+    body {
+        background: var(--Charcoal-Grey);
+    }
+    main {
+        border-radius: 2rem;
+        max-width: 927px;
+    }
+    .banner {
+        display: none;
+    }
+    .sign-up {
+        display: flex;
+        flex-flow: row;
+    }
+    .content {
+        padding: 4.1rem 4.5rem 3rem 3rem;
+    }
+    h1 {
+        font-size: 3.5rem;
+    }
+    .banner-desktop {
+        display: block;
+        scale: 0.9 0.95;
+    }
+    .thanks {
+        max-width: 504px;
+        padding: 3rem 4rem;
+        gap: 3.3rem;
+    }
+    .thanks button {
+        margin-top: 0;
+    }
+}
